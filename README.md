@@ -1,116 +1,67 @@
-# Yūgen Website - Node.js Version
+# Yūgen Website - Node.js
 
 Underground techno events and immersive experiences. Beauty in the unseen, catharsis where we dare not go.
 
 ## Project Status (Updated June 30, 2025)
 
-**Current Version**: V2.0 - Node.js Migration Complete
-**Status**: Production Ready
+**Current Version**: V2.0 - Node.js Production Ready  
+**Status**: Live and Deployed  
+**Tech Stack**: Node.js, Express.js, EJS Templates  
+**Hosting**: Vercel (Free Tier)
 
-### Recent Updates
-- ✅ Migrated from static HTML to Node.js with Express.js
-- ✅ Implemented EJS templating for maintainable code
-- ✅ Added server-side routing for future expansion
-- ✅ Configured for easy deployment to Vercel/Railway/Render
-- ✅ Preserved all original design and functionality
-- ✅ Set up structure for future Events and Releases pages
+---
 
-## Quick Start
+## 🎯 Current Functionality
 
-### Development
+### ✅ **Core Website Features**
+- **Landing Page** - Immersive hero section with animated SVG logo breathing effect
+- **About Page** - Brand philosophy and mission statement
+- **Navigation** - Responsive navbar with mobile hamburger menu
+- **404 Error Handling** - Custom error pages with brand styling
+- **Footer** - Social media links with glassmorphism design and hover effects
+
+### ✅ **Visual & UX Design**
+- **Animated Logo** - 4-second breathing cycle with red glow effects
+- **Background Video** - Hero video with mobile optimization and fallbacks
+- **Mobile-First Design** - Responsive across all devices (desktop, tablet, mobile)
+- **Dark Aesthetic** - Brand colors: #0a0a0a, #1a1a1a, #ff0000 accent
+- **Typography** - Bebas Neue (headers), Inter (body text)
+- **Interactive Elements** - Smooth hover effects, focus states, animations
+
+### ✅ **Technical Implementation**
+- **Express.js Server** - RESTful routing with proper error handling
+- **EJS Templating** - Modular components (header, navigation, footer)
+- **Static Asset Serving** - Optimized CSS, JavaScript, and media files
+- **Environment Configuration** - Development and production ready
+- **SEO Optimization** - Meta tags, Open Graph, structured data
+- **PWA Ready** - Web app manifest, favicon suite, mobile optimization
+
+### ✅ **Social & Branding**
+- **Social Media Integration** - Email, Instagram, Facebook, SoundCloud, Bandcamp
+- **Professional Favicon Suite** - ICO, SVG, PNG variants for all devices
+- **Copyright & Legal** - Brand protection and attribution
+- **Accessibility** - WCAG 2.1 AA compliant, keyboard navigation, screen reader support
+
+---
+
+## 🚀 Development Setup
+
+### **Quick Start**
 ```bash
+cd yugen-website
 npm install
 npm run dev
 ```
 
-### Production
+### **Available Commands**
 ```bash
-npm install
-npm start
+npm run dev        # Development server with auto-restart
+npm start          # Production server
+vercel             # Deploy preview
+vercel --prod      # Deploy to production
 ```
 
-## Technology Stack
-
-- **Backend**: Node.js with Express.js
-- **Templating**: EJS (Embedded JavaScript)
-- **Deployment**: Configured for Vercel (recommended)
-- **Database Ready**: Structure in place for future database integration
-
-## Project Structure
-
-```
-yugen-website/
-├── server.js               # Main Express server
-├── package.json            # Dependencies and scripts
-├── vercel.json            # Vercel deployment configuration
-├── views/                 # EJS templates
-│   ├── partials/
-│   │   ├── header.ejs     # Shared header with meta tags
-│   │   ├── navigation.ejs # Navigation component
-│   │   └── footer.ejs     # Shared footer
-│   ├── index.ejs          # Landing page template
-│   ├── about.ejs          # About page template
-│   ├── 404.ejs            # Error page template
-│   └── error.ejs          # Server error template
-├── assets/                # Static assets (CSS, JS, images)
-│   ├── css/style.css      # Original stylesheet preserved
-│   ├── js/main.js         # Original JavaScript preserved
-│   └── images/            # Logo, videos, graphics
-├── public/                # Static files (robots.txt, sitemap.xml)
-└── .env                   # Environment configuration
-```
-## Key Features
-
-### Express.js Server
-- Clean routing structure with dedicated handlers
-- Error handling middleware
-- Static file serving for assets
-- Environment variable configuration
-
-### EJS Templates
-- Modular design with reusable partials
-- Dynamic meta tags and page titles
-- Active navigation state management
-- SEO-friendly structured data
-
-### Future-Ready Architecture
-- Database integration ready (just add your preferred DB)
-- API routes can be easily added
-- Authentication middleware ready to implement
-- Contact forms and user interactions prepared
-
-## Routes
-
-- `GET /` - Landing page with animated logo
-- `GET /about` - About page with brand philosophy  
-- `GET /events` - Placeholder (returns 404 for now)
-- `GET /releases` - Placeholder (returns 404 for now)
-- `404` - Custom error page with brand styling
-
-## Deployment Options
-
-### Vercel (Recommended)
-```bash
-npm install -g vercel
-vercel --prod
-```
-
-### Railway
-```bash
-# Connect your GitHub repo to Railway
-# Auto-deploys on push to main branch
-```
-
-### Render
-```bash
-# Connect GitHub repo
-# Build command: npm install
-# Start command: npm start
-```
-
-## Environment Variables
-
-Create a `.env` file (already included):
+### **Environment Variables**
 ```env
 NODE_ENV=development
 PORT=3000
@@ -118,41 +69,195 @@ SITE_URL=https://yugen.com.au
 SITE_NAME=Yūgen
 ```
 
-## What's Preserved
+---
 
-✅ **Exact same visual design** - Every animation, effect, and style maintained
-✅ **Logo breathing animation** - SVG animations work identically  
-✅ **Mobile responsiveness** - All breakpoints and interactions preserved
-✅ **SEO optimization** - Meta tags, structured data, sitemaps maintained
-✅ **Accessibility** - ARIA attributes and keyboard navigation intact
+## 📁 Project Structure
 
-## What's Improved
-
-✨ **Server-side rendering** - Better SEO and initial load performance
-✨ **Modular templates** - Easy to maintain and extend
-✨ **Environment configuration** - Easy deployment to any platform
-✨ **Future expansion ready** - Database and API integration prepared
-✨ **Professional deployment** - Production-ready server setup
-
-## Next Steps
-
-1. **Deploy to Vercel**: `npm run deploy:vercel`
-2. **Add database**: Choose from Supabase, PlanetScale, or MongoDB Atlas
-3. **Build Events page**: Create event management system
-4. **Build Releases page**: Integrate with music platforms
-5. **Add contact forms**: Email integration ready
-
-## Migration Notes
-
-- Original static files moved to backup
-- All functionality preserved and enhanced
-- Ready for immediate deployment
-- Database integration points identified
-- API endpoints can be added easily
+```
+yugen-website/
+├── server.js                 # Express.js server and routing
+├── package.json              # Dependencies and scripts
+├── vercel.json               # Vercel deployment configuration
+├── .env                      # Environment variables
+├── views/                    # EJS templates
+│   ├── partials/
+│   │   ├── header.ejs        # <head>, meta tags, favicons
+│   │   ├── navigation.ejs    # Responsive navbar component
+│   │   └── footer.ejs        # Social links and copyright
+│   ├── index.ejs             # Landing page with animated logo
+│   ├── about.ejs             # Brand philosophy page
+│   ├── 404.ejs               # Custom error page
+│   └── error.ejs             # Server error page
+├── assets/                   # Static assets
+│   ├── css/style.css         # Complete stylesheet (~600 lines)
+│   ├── js/main.js            # Mobile menu & accessibility
+│   └── images/               # Logo, video, favicon suite
+├── public/                   # Static files
+│   ├── robots.txt            # SEO directives
+│   ├── sitemap.xml           # Site structure
+│   └── site.webmanifest      # PWA configuration
+└── README.md                 # This documentation
+```
 
 ---
 
-**Original design by**: Yūgen Team  
-**Node.js migration**: Complete  
-**Status**: Production Ready  
-**Next**: Deploy and scale! 🚀
+## 🛣️ Current Routes
+
+| Route | Page | Status | Description |
+|-------|------|--------|-------------|
+| `/` | Landing | ✅ Live | Hero section with animated logo |
+| `/about` | About | ✅ Live | Brand story and philosophy |
+| `/events` | Events | 🚧 Placeholder | Returns 404 "coming soon" |
+| `/releases` | Releases | 🚧 Placeholder | Returns 404 "coming soon" |
+| `/*` | 404 | ✅ Live | Custom error page |
+
+---
+
+## 🎨 Design System
+
+### **Color Palette**
+- **Primary Black**: `#0a0a0a` (backgrounds)
+- **Secondary Black**: `#1a1a1a` (cards, containers)
+- **Accent Red**: `#ff0000` (highlights, hover states)
+- **Text Colors**: `#ffffff`, `#cccccc`, `#999999`
+- **Border Gray**: `#333333`
+
+### **Typography Scale**
+- **Hero Titles**: Bebas Neue, 4rem+ (uppercase)
+- **Section Headers**: Bebas Neue, 2-3rem
+- **Body Text**: Inter, 1rem (weights: 300-700)
+- **UI Elements**: Inter, 0.9rem (buttons, navigation)
+
+### **Component Library**
+- **Logo Breathing Animation** - 4s cycle, red glow
+- **Glassmorphism Buttons** - Semi-transparent with backdrop blur
+- **Social Icon Hover** - Lift + glow + sweep effects
+- **Mobile Menu** - Slide-down with backdrop blur
+- **Focus States** - Custom accessibility-compliant indicators
+
+---
+
+## 🚀 Future Development Roadmap
+
+### **Phase 1: Content Foundation (1-2 months)**
+- [ ] **Events Page** - Event listings, descriptions, dates
+- [ ] **Releases Page** - Music catalog, streaming links, artist info
+- [ ] **Content Management** - Admin interface for events/releases
+- [ ] **Gallery Section** - Event photos, atmosphere documentation
+- [ ] **Blog/News** - Updates, announcements, stories
+
+### **Phase 2: User Engagement (2-3 months)**
+- [ ] **Mailing List** - Newsletter signup with email automation
+- [ ] **Social Media Integration** - Live feeds, sharing capabilities
+- [ ] **Contact Forms** - Booking inquiries, press contact
+- [ ] **Search Functionality** - Find events, releases, content
+- [ ] **RSS Feeds** - Blog and news syndication
+
+### **Phase 3: E-commerce & Ticketing (3-4 months)**
+- [ ] **User Authentication** - Account creation, login system
+- [ ] **Ticketing System** - Event ticket sales and management
+- [ ] **Payment Processing** - Stripe integration, secure transactions
+- [ ] **Order Management** - Purchase history, ticket delivery
+- [ ] **Merchandise Store** - Branded items, music sales
+
+### **Phase 4: Community Features (4-6 months)**
+- [ ] **User Profiles** - Personal dashboards, preferences
+- [ ] **Event Check-ins** - Attendance tracking, social proof
+- [ ] **Reviews & Ratings** - Event feedback system
+- [ ] **Waitlists** - Sold-out event management
+- [ ] **VIP/Membership Tiers** - Exclusive access, perks
+
+### **Phase 5: Advanced Features (6+ months)**
+- [ ] **Mobile App** - React Native companion app
+- [ ] **Live Streaming** - Event broadcasts, virtual attendance
+- [ ] **AI Recommendations** - Personalized event suggestions
+- [ ] **Analytics Dashboard** - Business intelligence, insights
+- [ ] **Multi-language Support** - International expansion
+- [ ] **API Development** - Third-party integrations
+
+---
+
+## 🛠️ Technical Considerations
+
+### **Database Integration Ready**
+Current architecture supports easy database addition:
+- **Recommended**: Supabase (PostgreSQL + Auth + Real-time)
+- **Alternative**: PlanetScale (MySQL), MongoDB Atlas
+- **Structure**: Events, Users, Orders, Releases, Newsletter tables
+
+### **Payment Processing**
+- **Primary**: Stripe (recommended for events/tickets)
+- **Alternative**: PayPal, Square
+- **Requirements**: SSL, PCI compliance, webhook handling
+
+### **Email Services**
+- **Transactional**: Resend, SendGrid
+- **Marketing**: Mailchimp, ConvertKit
+- **Integration**: Newsletter signup, order confirmations
+
+### **Media Handling**
+- **Images**: Cloudinary, AWS S3
+- **Audio/Video**: YouTube, Vimeo, SoundCloud embeds
+- **Storage**: Vercel functions + external CDN
+
+### **Performance Optimization**
+- **Current**: Static assets, optimized images
+- **Future**: Database caching, CDN, image optimization
+- **Monitoring**: Vercel Analytics, error tracking
+
+---
+
+## 📊 Deployment & Hosting
+
+### **Current Setup (Free)**
+- **Hosting**: Vercel (100GB bandwidth/month)
+- **Domain**: Ready for yugen.com.au
+- **SSL**: Automatic HTTPS
+- **CDN**: Global edge network
+
+### **Scaling Considerations**
+- **Vercel Pro**: $20/month (unlimited bandwidth)
+- **Database**: $0-25/month (depending on service)
+- **Email Services**: $0-50/month (based on volume)
+- **Payment Processing**: 2.9% + 30¢ per transaction
+
+---
+
+## 🎵 Brand Alignment
+
+### **"Beauty in the Unseen" Philosophy**
+- **Hidden Elements** - Footer discovery, scroll interactions
+- **Mysterious Aesthetic** - Dark colors, subtle animations
+- **Gradual Revelation** - Progressive disclosure of information
+- **Immersive Experience** - Full-screen visuals, atmospheric design
+
+### **Underground Techno Identity**
+- **Industrial Typography** - Bold, mechanical fonts
+- **Minimal Interface** - Clean, uncluttered design
+- **Atmospheric Media** - Background videos, ambient sounds
+- **Community Focus** - Social connections, shared experiences
+
+---
+
+## 📞 Support & Maintenance
+
+### **Regular Updates Needed**
+- **Security patches** - Dependencies, server updates
+- **Content updates** - Events, releases, news
+- **Performance monitoring** - Load times, error rates
+- **SEO optimization** - Search rankings, metadata
+
+### **Backup Strategy**
+- **Code**: Git repository (GitHub)
+- **Database**: Automated daily backups
+- **Media**: CDN redundancy
+- **Configuration**: Environment variable documentation
+
+---
+
+**Last Updated**: June 30, 2025  
+**Live Site**: [Preview URL from Vercel]  
+**Repository**: [GitHub Repository URL]  
+**Contact**: info@yugen.com.au
+
+*Ready to scale from underground movement to global phenomenon.* 🎭✨
