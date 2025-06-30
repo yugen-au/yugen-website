@@ -1,0 +1,16 @@
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo-container">
+                <a href="/">
+                    <img src="/assets/images/yugen-logo.svg" alt="Yūgen" class="logo">
+                </a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="/events" class="<%= currentPage === 'events' ? 'active' : '' %>">Events</a></li>
+                <li><a href="/releases" class="<%= currentPage === 'releases' ? 'active' : '' %>">Releases</a></li>
+                <li><a href="/about" class="<%= currentPage === 'about' ? 'active' : '' %>">About</a></li>
+            </ul>
+        </div>
+    </nav>
