@@ -2,12 +2,13 @@
 
 Underground techno events and immersive experiences. Beauty in the unseen, catharsis where we dare not go.
 
-## Project Status (Updated June 30, 2025)
+## Project Status (Updated July 15, 2025)
 
-**Current Version**: V2.0 - Node.js Production Ready  
-**Status**: Live and Deployed  
-**Tech Stack**: Node.js, Express.js, EJS Templates  
-**Hosting**: Vercel (Free Tier)
+**Current Version**: V3.0 - Frontend/Backend Separated Architecture  
+**Status**: Development Ready - Migrated to Modern Stack  
+**Frontend**: Next.js 14 (React)  
+**Backend**: Express.js API  
+**Hosting**: Ready for Vercel (Frontend) + Railway/Vercel (Backend)
 
 ---
 
@@ -21,19 +22,20 @@ Underground techno events and immersive experiences. Beauty in the unseen, catha
 - **Footer** - Social media links with glassmorphism design and hover effects
 
 ### ✅ **Visual & UX Design**
-- **Animated Logo** - 4-second breathing cycle with red glow effects
+- **Animated Logo** - 4-second breathing cycle with green glow effects
 - **Background Video** - Hero video with mobile optimization and fallbacks
 - **Mobile-First Design** - Responsive across all devices (desktop, tablet, mobile)
-- **Dark Aesthetic** - Brand colors: #0a0a0a, #1a1a1a, #ff0000 accent
+- **Dark Aesthetic** - Brand colors: #0a0a0a, #1a1a1a, #4a7c59 accent
 - **Typography** - Bebas Neue (headers), Inter (body text)
 - **Interactive Elements** - Smooth hover effects, focus states, animations
 
 ### ✅ **Technical Implementation**
-- **Express.js Server** - RESTful routing with proper error handling
-- **EJS Templating** - Modular components (header, navigation, footer)
-- **Static Asset Serving** - Optimized CSS, JavaScript, and media files
-- **Environment Configuration** - Development and production ready
-- **SEO Optimization** - Meta tags, Open Graph, structured data
+- **Next.js Frontend** - React components with static generation
+- **Express.js API Backend** - RESTful endpoints with CORS support
+- **Component Architecture** - Reusable React components (Layout, Navigation, Footer)
+- **Static Asset Optimization** - Next.js automatic image and bundle optimization
+- **Environment Configuration** - Separate dev/prod configs for frontend and backend
+- **SEO Optimization** - Server-side rendering, meta tags, Open Graph, structured data
 - **PWA Ready** - Web app manifest, favicon suite, mobile optimization
 
 ### ✅ **Social & Branding**
@@ -46,27 +48,49 @@ Underground techno events and immersive experiences. Beauty in the unseen, catha
 
 ## 🚀 Development Setup
 
-### **Quick Start**
+### **Frontend (Next.js)**
 ```bash
-cd yugen-website
+cd yugen-frontend
 npm install
-npm run dev
+npm run dev        # Runs on http://localhost:3000
+```
+
+### **Backend (Express API)**
+```bash
+cd yugen-backend
+npm install
+npm run dev        # Runs on http://localhost:3001
 ```
 
 ### **Available Commands**
+
+**Frontend Commands:**
+```bash
+npm run dev        # Development server
+npm run build      # Production build
+npm start          # Production server
+npm run export     # Static export
+```
+
+**Backend Commands:**
 ```bash
 npm run dev        # Development server with auto-restart
 npm start          # Production server
-vercel             # Deploy preview
-vercel --prod      # Deploy to production
 ```
 
 ### **Environment Variables**
+
+**Frontend (.env.local):**
+```env
+NEXT_PUBLIC_API_URL=http://localhost:3001
+NEXT_PUBLIC_SITE_URL=https://yugen.com.au
+```
+
+**Backend (.env):**
 ```env
 NODE_ENV=development
-PORT=3000
-SITE_URL=https://yugen.com.au
-SITE_NAME=Yūgen
+PORT=3001
+CORS_ORIGIN=http://localhost:3000
 ```
 
 ---
@@ -75,41 +99,56 @@ SITE_NAME=Yūgen
 
 ```
 yugen-website/
-├── server.js                 # Express.js server and routing
-├── package.json              # Dependencies and scripts
-├── vercel.json               # Vercel deployment configuration
-├── .env                      # Environment variables
-├── views/                    # EJS templates
-│   ├── partials/
-│   │   ├── header.ejs        # <head>, meta tags, favicons
-│   │   ├── navigation.ejs    # Responsive navbar component
-│   │   └── footer.ejs        # Social links and copyright
-│   ├── index.ejs             # Landing page with animated logo
-│   ├── about.ejs             # Brand philosophy page
-│   ├── 404.ejs               # Custom error page
-│   └── error.ejs             # Server error page
-├── assets/                   # Static assets
-│   ├── css/style.css         # Complete stylesheet (~600 lines)
-│   ├── js/main.js            # Mobile menu & accessibility
-│   └── images/               # Logo, video, favicon suite
-├── public/                   # Static files
-│   ├── robots.txt            # SEO directives
-│   ├── sitemap.xml           # Site structure
-│   └── site.webmanifest      # PWA configuration
-└── README.md                 # This documentation
+├── yugen-frontend/           # Next.js Frontend Application
+│   ├── components/           # React Components
+│   │   ├── Layout.js         # Main layout with head/footer
+│   │   ├── Navigation.js     # Responsive navigation with mobile menu
+│   │   ├── Footer.js         # Social links and copyright
+│   │   └── AnimatedLogo.js   # SVG logo with breathing animation
+│   ├── pages/                # Next.js Pages (file-based routing)
+│   │   ├── _app.js           # Global app wrapper
+│   │   ├── index.js          # Landing page with animated logo
+│   │   ├── about.js          # Brand philosophy page
+│   │   ├── events.js         # Events (coming soon)
+│   │   ├── releases.js       # Releases (coming soon)
+│   │   └── 404.js            # Custom error page
+│   ├── styles/               # CSS Styles
+│   │   └── globals.css       # Complete website styles (~600 lines)
+│   ├── public/               # Static Assets
+│   │   ├── assets/images/    # Logo, video, favicon suite
+│   │   ├── robots.txt        # SEO directives
+│   │   ├── sitemap.xml       # Site structure
+│   │   └── site.webmanifest  # PWA configuration
+│   ├── package.json          # Frontend dependencies
+│   └── next.config.js        # Next.js configuration
+├── yugen-backend/            # Express.js API Backend
+│   ├── server.js             # API server with RESTful routes
+│   └── package.json          # Backend dependencies
+├── MIGRATION_README.md       # Migration documentation
+└── README.md                 # This documentation (updated)
 ```
 
 ---
 
 ## 🛣️ Current Routes
 
+**Frontend Routes (Next.js):**
 | Route | Page | Status | Description |
 |-------|------|--------|-------------|
 | `/` | Landing | ✅ Live | Hero section with animated logo |
 | `/about` | About | ✅ Live | Brand story and philosophy |
-| `/events` | Events | 🚧 Placeholder | Returns 404 "coming soon" |
-| `/releases` | Releases | 🚧 Placeholder | Returns 404 "coming soon" |
+| `/events` | Events | 🚧 Coming Soon | Placeholder page |
+| `/releases` | Releases | 🚧 Coming Soon | Placeholder page |
 | `/*` | 404 | ✅ Live | Custom error page |
+
+**Backend API Routes:**
+| Endpoint | Method | Status | Description |
+|----------|--------|--------|-------------|
+| `/api/health` | GET | ✅ Live | API health check |
+| `/api/pages/home` | GET | ✅ Live | Homepage data |
+| `/api/pages/about` | GET | ✅ Live | About page data |
+| `/api/events` | GET | 🚧 Placeholder | Future events endpoint |
+| `/api/releases` | GET | 🚧 Placeholder | Future releases endpoint |
 
 ---
 
@@ -118,7 +157,7 @@ yugen-website/
 ### **Color Palette**
 - **Primary Black**: `#0a0a0a` (backgrounds)
 - **Secondary Black**: `#1a1a1a` (cards, containers)
-- **Accent Red**: `#ff0000` (highlights, hover states)
+- **Accent Green**: `#4a7c59` (highlights, hover states)
 - **Text Colors**: `#ffffff`, `#cccccc`, `#999999`
 - **Border Gray**: `#333333`
 
@@ -129,7 +168,7 @@ yugen-website/
 - **UI Elements**: Inter, 0.9rem (buttons, navigation)
 
 ### **Component Library**
-- **Logo Breathing Animation** - 4s cycle, red glow
+- **Logo Breathing Animation** - 4s cycle, green glow
 - **Glassmorphism Buttons** - Semi-transparent with backdrop blur
 - **Social Icon Hover** - Lift + glow + sweep effects
 - **Mobile Menu** - Slide-down with backdrop blur
@@ -201,19 +240,37 @@ Current architecture supports easy database addition:
 - **Storage**: Vercel functions + external CDN
 
 ### **Performance Optimization**
-- **Current**: Static assets, optimized images
-- **Future**: Database caching, CDN, image optimization
+- **Current**: Next.js static generation, code splitting, image optimization
+- **Frontend**: Client-side routing, automatic bundle optimization
+- **Backend**: Express.js with CORS, optimized JSON responses
+- **Future**: Database caching, CDN, advanced image optimization
 - **Monitoring**: Vercel Analytics, error tracking
 
 ---
 
 ## 📊 Deployment & Hosting
 
-### **Current Setup (Free)**
-- **Hosting**: Vercel (100GB bandwidth/month)
+### **Current Setup (Development Ready)**
+- **Frontend**: Next.js app ready for Vercel deployment
+- **Backend**: Express.js API ready for Vercel Functions or Railway
 - **Domain**: Ready for yugen.com.au
-- **SSL**: Automatic HTTPS
-- **CDN**: Global edge network
+- **SSL**: Automatic HTTPS on deployment
+- **CDN**: Global edge network via hosting platform
+
+### **Deployment Options**
+
+**Option 1: Vercel (Recommended)**
+```bash
+# Frontend
+cd yugen-frontend && vercel --prod
+
+# Backend  
+cd yugen-backend && vercel --prod
+```
+
+**Option 2: Separate Platforms**
+- **Frontend**: Vercel, Netlify (static)
+- **Backend**: Railway, Render, Heroku
 
 ### **Scaling Considerations**
 - **Vercel Pro**: $20/month (unlimited bandwidth)
@@ -255,9 +312,10 @@ Current architecture supports easy database addition:
 
 ---
 
-**Last Updated**: June 30, 2025  
-**Live Site**: [Preview URL from Vercel]  
-**Repository**: [GitHub Repository URL]  
+**Last Updated**: July 15, 2025  
+**Frontend**: Next.js 14 (React) - http://localhost:3000  
+**Backend API**: Express.js - http://localhost:3001  
+**Migration**: ✅ Complete - See MIGRATION_README.md for details  
 **Contact**: info@yugen.com.au
 
-*Ready to scale from underground movement to global phenomenon.* 🎭✨
+*Evolved from underground movement to modern, scalable architecture.* 🎭✨
