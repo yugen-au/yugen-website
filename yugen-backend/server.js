@@ -58,6 +58,22 @@ app.get('/api/releases', (req, res) => {
   });
 });
 
+// Root route
+app.get('/', (req, res) => {
+  res.json({ 
+    message: 'Yugen API Server',
+    status: 'running',
+    version: '3.0',
+    endpoints: {
+      health: '/api/health',
+      home: '/api/pages/home',
+      about: '/api/pages/about',
+      events: '/api/events',
+      releases: '/api/releases'
+    }
+  });
+});
+
 // Health check
 app.get('/api/health', (req, res) => {
   res.json({ 
