@@ -9,8 +9,16 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 3001; // Different port for API
 
+// CORS Configuration
+const corsOptions = {
+  origin: process.env.NODE_ENV === 'production' 
+    ? process.env.CORS_ORIGIN 
+    : ['http://localhost:3000', 'http://localhost:3001'],
+  credentials: true
+};
+
 // Middleware
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // API Routes
