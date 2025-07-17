@@ -20,15 +20,15 @@ export default function About() {
           
           <div className="about-text">
             <p>
-              Yūgen (/ˈjuːɡən/) is where music, movement, and immersive storytelling converge to create transformative experiences. We harness the power of sound and embodied expression to provoke deep personal insight, channeling themes of health and well-being through emotionally resonant narratives.
+              Yūgen (/ˈjuːɡən/) is where music, movement, and immersive storytelling converge to create transformative experiences.
             </p>
             
             <p>
-              We believe <strong>techno is more ritual than genre</strong>. Through carefully crafted environments that combine the darker sides of techno with experiential storytelling, we create atmospheres that speak to both the universal and the deeply personal. Each participant is left with a meaningful imprint that extends far beyond the night.
+              We believe <strong>techno is more ritual than genre</strong>. Beckoning our hidden beings by merging harsh techno elements with experiential storytelling, we create journeys that speak to both the universal and deeply personal. Each participant is left with a meaningful Imprint that persists beyond the night.
             </p>
             
             <p>
-              This is <strong>beauty in darkness</strong>. A profound, mysterious sense of the universe's beauty, especially that which goes unseen. An elusive feeling of mystery and transformation that emerges when we dare venture into uncharted territories of the self.
+              This is <strong>beauty in darkness</strong>. A profound, mysterious sense of beauty, especially that which goes unseen. An elusive feeling of mystery and growth that emerges when we dare venture into uncharted territories of the self.
             </p>
           </div>
         </div>

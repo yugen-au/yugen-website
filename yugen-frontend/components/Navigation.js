@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import ThemeToggle from './ThemeToggle'
 
 export default function Navigation({ currentPage }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -51,14 +52,16 @@ export default function Navigation({ currentPage }) {
             <img src="/assets/images/yugen-logo.svg" alt="Yūgen" className="logo" />
           </Link>
         </div>
-        <button 
-          className="mobile-menu-toggle" 
-          aria-label="Toggle mobile menu"
-          aria-expanded={isMobileMenuOpen}
-          onClick={toggleMobileMenu}
-        >
-          {isMobileMenuOpen ? '✕' : '☰'}
-        </button>
+        <div className="nav-controls">
+          <button 
+            className="mobile-menu-toggle" 
+            aria-label="Toggle mobile menu"
+            aria-expanded={isMobileMenuOpen}
+            onClick={toggleMobileMenu}
+          >
+            {isMobileMenuOpen ? '✕' : '☰'}
+          </button>
+        </div>
         <ul className={`nav-links ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
           <li>
             <Link href="/events" className={currentPage === 'events' ? 'active' : ''} onClick={closeMobileMenu}>
@@ -75,7 +78,14 @@ export default function Navigation({ currentPage }) {
               About
             </Link>
           </li>
+          <li className="mobile-theme-toggle">
+            <ThemeToggle />
+          </li>
         </ul>
+        {/* Desktop floating theme toggle */}
+        <div className="floating-theme-toggle">
+          <ThemeToggle />
+        </div>
       </div>
     </nav>
   )
